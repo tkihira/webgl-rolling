@@ -1,1 +1,1 @@
-jsx --release --executable web --output main.jsx.js main.jsx
+jsx --release --minify --executable web --output main.jsx.js main.jsx

@@ -182,55 +182,107 @@ class World {
 		}
 		return ret;
 	}
+	function removeCoin(index: number): void {
+		this.coins[index - 1] = new V3(99999, 99999, 99999);
+	}
 	function getCoins(): Array.<number> {
 		var ret = []: number[];
-		var size = this.width / 25;
+		var size = this.width / 15;
 		for(var i = 0; i < this.coins.length; i++) {
 			var coin = this.coins[i];
 			var c = coin.array();
 			
-			ret.push(c[0] - size, c[1] - size, c[2] - size, i);
-			ret.push(c[0] - size, c[1] + size, c[2] - size, i);
-			ret.push(c[0] - size, c[1] + size, c[2] + size, i);
-			ret.push(c[0] - size, c[1] - size, c[2] - size, i);
-			ret.push(c[0] - size, c[1] + size, c[2] + size, i);
-			ret.push(c[0] - size, c[1] - size, c[2] + size, i);
+			ret.push(c[0] - size, c[1] - size, c[2] - size, i + 1);
+			ret.push(c[0] - size, c[1] + size, c[2] - size, i + 1);
+			ret.push(c[0] - size, c[1] + size, c[2] + size, i + 1);
+			ret.push(c[0] - size, c[1] - size, c[2] - size, i + 1);
+			ret.push(c[0] - size, c[1] + size, c[2] + size, i + 1);
+			ret.push(c[0] - size, c[1] - size, c[2] + size, i + 1);
 
-			ret.push(c[0] + size, c[1] - size, c[2] - size, i);
-			ret.push(c[0] + size, c[1] + size, c[2] - size, i);
-			ret.push(c[0] + size, c[1] + size, c[2] + size, i);
-			ret.push(c[0] + size, c[1] - size, c[2] - size, i);
-			ret.push(c[0] + size, c[1] + size, c[2] + size, i);
-			ret.push(c[0] + size, c[1] - size, c[2] + size, i);
+			ret.push(c[0] + size, c[1] - size, c[2] - size, i + 1);
+			ret.push(c[0] + size, c[1] + size, c[2] - size, i + 1);
+			ret.push(c[0] + size, c[1] + size, c[2] + size, i + 1);
+			ret.push(c[0] + size, c[1] - size, c[2] - size, i + 1);
+			ret.push(c[0] + size, c[1] + size, c[2] + size, i + 1);
+			ret.push(c[0] + size, c[1] - size, c[2] + size, i + 1);
 			
-			ret.push(c[0] - size, c[1] - size, c[2] - size, i);
-			ret.push(c[0] + size, c[1] - size, c[2] - size, i);
-			ret.push(c[0] + size, c[1] - size, c[2] + size, i);
-			ret.push(c[0] - size, c[1] - size, c[2] - size, i);
-			ret.push(c[0] + size, c[1] - size, c[2] + size, i);
-			ret.push(c[0] - size, c[1] - size, c[2] + size, i);
+			ret.push(c[0] - size, c[1] - size, c[2] - size, i + 1);
+			ret.push(c[0] + size, c[1] - size, c[2] - size, i + 1);
+			ret.push(c[0] + size, c[1] - size, c[2] + size, i + 1);
+			ret.push(c[0] - size, c[1] - size, c[2] - size, i + 1);
+			ret.push(c[0] + size, c[1] - size, c[2] + size, i + 1);
+			ret.push(c[0] - size, c[1] - size, c[2] + size, i + 1);
 			
-			ret.push(c[0] - size, c[1] + size, c[2] - size, i);
-			ret.push(c[0] + size, c[1] + size, c[2] - size, i);
-			ret.push(c[0] + size, c[1] + size, c[2] + size, i);
-			ret.push(c[0] - size, c[1] + size, c[2] - size, i);
-			ret.push(c[0] + size, c[1] + size, c[2] + size, i);
-			ret.push(c[0] - size, c[1] + size, c[2] + size, i);
+			ret.push(c[0] - size, c[1] + size, c[2] - size, i + 1);
+			ret.push(c[0] + size, c[1] + size, c[2] - size, i + 1);
+			ret.push(c[0] + size, c[1] + size, c[2] + size, i + 1);
+			ret.push(c[0] - size, c[1] + size, c[2] - size, i + 1);
+			ret.push(c[0] + size, c[1] + size, c[2] + size, i + 1);
+			ret.push(c[0] - size, c[1] + size, c[2] + size, i + 1);
 
-			ret.push(c[0] - size, c[1] - size, c[2] - size, i);
-			ret.push(c[0] + size, c[1] - size, c[2] - size, i);
-			ret.push(c[0] + size, c[1] + size, c[2] - size, i);
-			ret.push(c[0] - size, c[1] - size, c[2] - size, i);
-			ret.push(c[0] + size, c[1] + size, c[2] - size, i);
-			ret.push(c[0] - size, c[1] + size, c[2] - size, i);
+			ret.push(c[0] - size, c[1] - size, c[2] - size, i + 1);
+			ret.push(c[0] + size, c[1] - size, c[2] - size, i + 1);
+			ret.push(c[0] + size, c[1] + size, c[2] - size, i + 1);
+			ret.push(c[0] - size, c[1] - size, c[2] - size, i + 1);
+			ret.push(c[0] + size, c[1] + size, c[2] - size, i + 1);
+			ret.push(c[0] - size, c[1] + size, c[2] - size, i + 1);
 			
-			ret.push(c[0] - size, c[1] - size, c[2] + size, i);
-			ret.push(c[0] + size, c[1] - size, c[2] + size, i);
-			ret.push(c[0] + size, c[1] + size, c[2] + size, i);
-			ret.push(c[0] - size, c[1] - size, c[2] + size, i);
-			ret.push(c[0] + size, c[1] + size, c[2] + size, i);
-			ret.push(c[0] - size, c[1] + size, c[2] + size, i);
+			ret.push(c[0] - size, c[1] - size, c[2] + size, i + 1);
+			ret.push(c[0] + size, c[1] - size, c[2] + size, i + 1);
+			ret.push(c[0] + size, c[1] + size, c[2] + size, i + 1);
+			ret.push(c[0] - size, c[1] - size, c[2] + size, i + 1);
+			ret.push(c[0] + size, c[1] + size, c[2] + size, i + 1);
+			ret.push(c[0] - size, c[1] + size, c[2] + size, i + 1);
 		}
+		return ret;
+	}
+	
+	function getCloud(): Array.<number> {
+		var ret = []: number[];
+		var size = 5000;
+		
+		ret.push(-size, -size, -size);
+		ret.push(-size, +size, -size);
+		ret.push(-size, +size, +size);
+		ret.push(-size, -size, -size);
+		ret.push(-size, +size, +size);
+		ret.push(-size, -size, +size);
+
+		ret.push(+size, -size, -size);
+		ret.push(+size, +size, -size);
+		ret.push(+size, +size, +size);
+		ret.push(+size, -size, -size);
+		ret.push(+size, +size, +size);
+		ret.push(+size, -size, +size);
+		
+		ret.push(-size, -size, -size);
+		ret.push(+size, -size, -size);
+		ret.push(+size, -size, +size);
+		ret.push(-size, -size, -size);
+		ret.push(+size, -size, +size);
+		ret.push(-size, -size, +size);
+		
+		ret.push(-size, +size, -size);
+		ret.push(+size, +size, -size);
+		ret.push(+size, +size, +size);
+		ret.push(-size, +size, -size);
+		ret.push(+size, +size, +size);
+		ret.push(-size, +size, +size);
+
+		ret.push(-size, -size, -size);
+		ret.push(+size, -size, -size);
+		ret.push(+size, +size, -size);
+		ret.push(-size, -size, -size);
+		ret.push(+size, +size, -size);
+		ret.push(-size, +size, -size);
+		
+		ret.push(-size, -size, +size);
+		ret.push(+size, -size, +size);
+		ret.push(+size, +size, +size);
+		ret.push(-size, -size, +size);
+		ret.push(+size, +size, +size);
+		ret.push(-size, +size, +size);
+		
 		return ret;
 	}
 	

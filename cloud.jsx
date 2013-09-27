@@ -92,7 +92,7 @@ class Cloud {
 		var ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
 		var data = ctx.getImageData(0, 0, width, height);
 		
-		var frequency = 5;
+		var frequency = 10;
 		var octaves = 5;
 		var seed = 100;
 		var noise = new ClassicNoise();
@@ -105,7 +105,7 @@ class Cloud {
 			var x = i / 4 % width;
 			var y = (i / (width * 4)) as int;
 			var n = noise.noise(x / fx, y / fy, octaves);
-			var color = limit(218 * (0.5 + n * 0.5), 0, 255);
+			var color = limit(218 * (1 + n * 0.5), 0, 255);
 			
 			data.data[i + 0] = color;
 			data.data[i + 1] = 240;
