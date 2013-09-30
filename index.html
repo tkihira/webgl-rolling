@@ -33,7 +33,7 @@ varying float num;
 void main() {
 	vec4 col;
 	vec2 p;
-	if(mod(floor(pos.z / 20.0) + floor(pos.x / 20.0) + floor(pos.y / 20.0), 2.0) == 0.0) {
+	if(mod(floor((pos.z + 0.001) / 20.0) + floor((pos.x + 0.001) / 20.0) + floor((pos.y + 0.001) / 20.0), 2.0) == 0.0) {
 		gl_FragColor = darkColor;
 	} else {
 		gl_FragColor = lightColor;
